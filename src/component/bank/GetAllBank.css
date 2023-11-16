@@ -1,0 +1,19 @@
+
+.b-addform {
+  background: lightblue;
+  padding: 20px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.display-table {
+  background: lightblue;
+  padding: 20px;
+}
+

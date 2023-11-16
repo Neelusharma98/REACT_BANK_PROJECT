@@ -1,0 +1,44 @@
+/* AdminDashboard.css */
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% viewport height */
+}
+
+.admin-navbar {
+  background-color: lightblue;
+  padding: 30px;
+}
+
+.admin-navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 10;
+}
+
+.admin-navbar li {
+  margin-right: 20px;
+}
+
+.admin-navbar li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Optional: Style the links to indicate the active route */
+.admin-navbar li a.active {
+  color: blue;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px; /* Add space below the heading */
+  margin-top:200px;
+}

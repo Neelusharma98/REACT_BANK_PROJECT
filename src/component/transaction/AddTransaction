@@ -1,0 +1,69 @@
+
+import React, { useState } from 'react';
+
+import { createTransaction } from '../../Service/Transaction';
+//import './AddTransaction.css';
+
+const AddTransaction = () => {
+    const [accountNumber, setAccountNumber] = useState("");
+    const [recieverAccount, setRecieverAccount] = useState("");
+    const [type, setType] = useState("credit"); 
+    const [amount, setAmount] = useState("");
+
+    const handleMySubmit = async (e) => {
+        e.preventDefault();
+        if (accountNumber === "") {
+            alert("Please Enter Account Number");
+        } else if (recieverAccount === "") {
+            alert("Please Enter Receiver Account");
+        } else if (amount === "") {
+            alert("Please Enter Amount");
+        } else {
+            console.log("adding transaction>>>>");
+            let response = await createTransaction(accountNumber,recieverAccount,type,amount);
+            console.log(response);
+            if (response.data) {
+                alert("Transaction Added Successfully");
+            }
+        }
+    };
+    
+    return (
+        <form>
+            <h4 align="center">Add Transaction</h4>
+            <div className="accountNumber">
+                <label className="form-label">Account Number</label>
+                <input type="text" className="form-control" aria-describedby="emailHelp" value={accountNumber}
+                    onChange={(e) => setAccountNumber(e.target.value)}
+                />
+            </div>
+            <div className="recieverAccount">
+                <label className="form-label">Receiver Account</label>
+                <input type="text" className="form-control" aria-describedby="emailHelp"value={recieverAccount}
+                    onChange={(e) => setRecieverAccount(e.target.value)}
+                />
+            </div>
+            <div className="type">
+                <label className="form-label">Transaction Type</label>
+                <select className="form-control" value={type}
+                    onChange={(e) => setType(e.target.value)}
+                >
+                    <option value="CREDIT">CREDIT</option>
+                    <option value="DEBIT">DEBIT</option>
+                    <option value="TRANSFER">TRANSFER</option>
+                </select>
+            </div>
+            <div className="amount">
+                <label className="form-label">Amount</label>
+                <input type="text" className="form-control" aria-describedby="emailHelp" value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                />
+            </div>
+
+            <br />
+            <button type="submit" className="btn btn-primary" onClick={handleMySubmit}> Submit</button>
+        </form>
+    );
+};
+
+export default AddTransaction;

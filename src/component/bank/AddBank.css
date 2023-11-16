@@ -1,0 +1,50 @@
+/* AddBank.css */
+
+/* Style the form container */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Center the "Add Bank" heading */
+  h4 {
+    text-align: center;
+  }
+  
+  /* Style the input fields and labels */
+  .label {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Style the submit button */
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Style the error messages */
+  .alert {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* Center align elements */
+  .center {
+    text-align: center;
+  }
+  
